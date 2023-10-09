@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    // import the poppins font from google fonts
+      extend: {
+        fontFamily: {
+          body: ['Poppins'],
+        },
+      },
   },
   plugins: [],
 }

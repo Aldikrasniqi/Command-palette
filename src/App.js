@@ -6,13 +6,14 @@ import HomePage from './pages/HomePage.jsx';
 import ProjectPage from './pages/ProjectPage.jsx';
 
 export default function App() {
+
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/projects/:id" element={<ProjectPage data={data}/>} />
       </Routes>
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="">
         <CommandPalette data={data} />
       </div>
     </Router>

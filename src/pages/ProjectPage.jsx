@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react';  
 import { useParams } from 'react-router-dom';
-
+import NavBar from '../components/NavBar';
 function ProjectPage({ data }) {
   const { id } = useParams();
   console.log(id);
@@ -16,8 +16,11 @@ function ProjectPage({ data }) {
   }
 
   return (
-    <div>
+    <div className='min-h-screen flex'>
+      <NavBar />
+      <div className='flex-1'>
       <h1>{projects[id].title}</h1> 
+      </div>
     </div>
   );
 }

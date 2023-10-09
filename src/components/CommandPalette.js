@@ -49,7 +49,7 @@ export default function CommandPalette({ data }) {
           as="div"
           onChange={(data) => {
             setIspen(false);
-            window.location.href = `/projects/${data.id}`;
+
           }}
           className="relative max-w-xl mx-auto bg-white rounded-xl shadow-2xl ring-1 ring-black/5 divide-y divide-gray-200 overflow-hidden"
         >
@@ -61,7 +61,7 @@ export default function CommandPalette({ data }) {
                 console.log('onChange');
               }}
               className="w-full bg-transparent border-0 text-sm focus:ring-0 text-gray-800 placeholder-gray-900 outline-none h-12 px-2"
-              placeholder="Search for a user"
+              placeholder="Search for a team or project"
             />
           </div>
 
