@@ -1,16 +1,15 @@
 import React from 'react'
 
 function ContentProjects(data) {
-    console.log(data.data);
   return (
     <div>
        <table className='w-full'>
-        <thead className='text-left bg-gray-400 text-white'>
+        <thead className='text-left bg-gray-100 text-gray-500 font-normal'>
           <tr>
-            <th>Project</th>
-            <th>Project Description</th>
-            <th>Project Link</th>
-            <th>Actions</th>
+            <th className='font-normal'>Project</th>
+            <th className='font-normal'>Project Description</th>
+            <th className='font-normal'>Project Link</th>
+            <th className='font-normal'>Actions</th>
           </tr>
         </thead>
         <tbody className='text-left'>
