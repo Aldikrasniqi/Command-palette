@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 function ContentProjects(data) {
   const statusColor = (status) => {
     console.log(status);
     switch (status) {
-      case 'Android Developer': 
+      case 'Android Developer':
         return 'bg-green-600 rounded-tl rounded-bl text-white';
       case 'iOS Developer':
         return 'bg-blue-600 rounded-tl rounded-bl text-white';
@@ -28,28 +28,55 @@ function ContentProjects(data) {
   };
   return (
     <div>
-       <table className='w-full'>
-        <thead className='text-left bg-gray-100 text-gray-500 font-normal'>
+      <table className="w-full">
+        <thead className="text-left bg-gray-100 text-gray-500 font-normal">
           <tr>
-            <th className='font-normal'>Project</th>
-            <th className='font-normal'>Project Members</th>
-            <th className='font-normal'>Last Updated</th>
-            <th className='font-normal'></th>
+            <th className="font-normal">Project</th>
+            <th className="font-normal">Project Members</th>
+            <th className="font-normal">Last Updated</th>
+            <th className="font-normal"></th>
           </tr>
         </thead>
-        <tbody className='text-left'>
+        <tbody className="text-left rounded-full">
           {data.data.map((item) => (
-            <tr key={item.id}>
-              <td className='p-3'><span className={`${statusColor(item.title)} w-2 h-2 rounded-full`}></span> </td>
-              <td>{item.members}</td>
+            
+            <tr key={item.id} className="rounded-full">
+              <td className="p-3 flex justify-start items-center">
+                <span
+                  className={`${statusColor(item.title)} mr-2 w-2 h-2 rounded`}
+                >
+                </span>
+                {item.title}
+              </td>
+              <td className="">
+
+              <div className="flex -space-x-4 items-center">
+                  {item.members_img.map((memberImg, index) => (
+                    <img
+                      key={index}
+                      className="w-10 h-10 border-2 border-white rounded-full"
+                      src={memberImg}
+                      alt={`Member ${index + 1}`}
+                    />
+                  ))}
+                  <a
+                    className="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600"
+                    href="/"
+                  >
+                    {item.members - 3 > 0 ? `+${item.members - 3}` : ''}
+                  </a>
+                </div>
+              </td>
               <td>{item.created_at}</td>
-              <td><button className='text-[#6d78d9]'>Edit</button></td>
+              <td>
+                <button className="text-[#6d78d9]">Edit</button>
+              </td>
             </tr>
           ))}
         </tbody>
-       </table>
+      </table>
     </div>
-  )
+  );
 }
 
-export default ContentProjects
+export default ContentProjects;
