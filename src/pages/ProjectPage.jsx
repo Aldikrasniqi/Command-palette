@@ -16,7 +16,7 @@ function ProjectPage({ data }) {
   }
 
   return (
-    <div className='min-h-screen flex'>
+    <div className=' flex'>
       <NavBar />
       <div className='flex-1'>
       <h1>{projects[id].title}</h1> 
